@@ -1,0 +1,145 @@
+---
+title: Frequently Asked Questions
+description: Answers to common inquiries about Sasi Sundar's services, projects, and technical expertise in AI/ML development.
+---
+
+## Overview
+
+You have questions about collaborating with Sasi Sundar, an expert AI/ML engineer specializing in end-to-end AI systems, backend services, NLP, and computer vision. This page addresses common inquiries on consulting, technology stacks, project examples, and contact methods. Review the expandable sections below for detailed answers.
+
+<Columns cols={2}>
+  <Card title="Consulting Services" icon="users" href="#consulting">
+    Learn about collaboration options and process.
+  </Card>
+  <Card title="Technology Stack" icon="code" href="#tech-stack">
+    Explore preferred frameworks and tools.
+  </Card>
+  <Card title="Project Examples" icon="folder" href="#projects">
+    See real-world AI/ML implementations.
+  </Card>
+  <Card title="Get in Touch" icon="mail" href="#contact">
+    Steps to start a conversation.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Sasi focuses on Python-based solutions with PyTorch and TensorFlow. Contact him for custom AI/ML projects tailored to your needs.
+</Callout>
+
+<ExpandableGroup>
+  <Expandable title="What consulting and collaboration options are available?" default-open="true">
+    Sasi offers flexible consulting for AI/ML projects, including system design, model training, deployment, and backend integration. 
+
+    Choose from these collaboration models:
+
+    | Model          | Description                          | Ideal For                  |
+    |----------------|--------------------------------------|----------------------------|
+    | Hourly         | Pay per hour for targeted assistance | Quick fixes, code reviews |
+    | Project-based  | Fixed price for defined deliverables | Full prototypes, apps     |
+    | Retainer       | Ongoing monthly support              | Long-term partnerships    |
+
+    Start with a free 30-minute discovery call to discuss your requirements.
+  </Expandable>
+
+  <Expandable title="What is your technology stack?">
+    Sasi builds robust AI/ML solutions using modern tools. Compare key frameworks below.
+
+    <Tabs>
+      <Tab title="PyTorch" icon="flame">
+        Preferred for research and production due to dynamic graphs.
+
+        <CodeGroup tabs="Training,Inference">
+          ````python
+          import torch
+          import torch.nn as nn
+
+          class SimpleModel(nn.Module):
+              def __init__(self):
+                  super().__init__()
+                  self.fc = nn.Linear(784, 10)
+
+              def forward(self, x):
+                  return self.fc(x.view(-1, 784))
+          ````
+
+          ````python
+          model = SimpleModel()
+          model.eval()
+          with torch.no_grad():
+              output = model(input_tensor)
+          ````
+        </CodeGroup>
+      </Tab>
+      <Tab title="TensorFlow" icon="brain">
+        Used for scalable deployments with Keras API.
+
+        <CodeGroup tabs="Model,Deployment">
+          ````python
+          import tensorflow as tf
+
+          model = tf.keras.Sequential([
+              tf.keras.layers.Dense(128, activation='relu'),
+              tf.keras.layers.Dense(10, activation='softmax')
+          ])
+          ````
+
+          ````python
+          converter = tf.lite.TFLiteConverter.from_keras_model(model)
+          tflite_model = converter.convert()
+          ````
+        </CodeGroup>
+      </Tab>
+    </Tabs>
+  </Expandable>
+
+  <Expandable title="Can you share project examples?">
+    Sasi has delivered projects like NLP sentiment analyzers and computer vision object detectors. Here's a simplified example of a PyTorch-based image classification model for production use.
+
+    <CodeGroup tabs="Model Definition,Training Loop">
+      ````python
+      import torch.nn.functional as F
+      from torchvision import models
+
+      class VisionModel(models.ResNet18):
+          def __init__(self, num_classes=10):
+              super().__init__(num_classes=num_classes)
+      ````
+
+      ````python
+      optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+      for epoch in range(10):
+          for batch in dataloader:
+              optimizer.zero_grad()
+              output = model(batch['image'])
+              loss = F.cross_entropy(output, batch['label'])
+              loss.backward()
+              optimizer.step()
+      ````
+    </CodeGroup>
+
+    Deployed examples include backend APIs with FastAPI serving ML inferences at scale.
+  </Expandable>
+
+  <Expandable title="How do I get in touch?">
+    Follow these steps to connect with Sasi for your AI/ML needs.
+
+    <Steps>
+      <Step title="Review Your Needs" icon="search">
+        Define your project scope, such as NLP model training or CV pipeline.
+      </Step>
+      <Step title="Send Initial Message" icon="mail">
+        Email at contact@sasisundar.com with a brief overview and timeline.
+      </Step>
+      <Step title="Schedule Call" icon="calendar">
+        Book a discovery call via Calendly link in response.
+      </Step>
+      <Step title="Discuss Proposal" icon="file-text">
+        Review customized proposal and kick off collaboration.
+      </Step>
+    </Steps>
+
+    <Callout kind="tip">
+      Response time is typically within 24 hours. Include details like dataset size or target accuracy for faster scoping.
+    </Callout>
+  </Expandable>
+</ExpandableGroup>

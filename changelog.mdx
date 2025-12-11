@@ -1,0 +1,137 @@
+---
+title: Changelog
+description: History of updates to Sasi Sundar's documentation, portfolio, and professional milestones.
+---
+
+## Overview
+
+Track all changes to Sasi Sundar's documentation site, portfolio projects, and professional milestones here. You receive updates on new AI/ML projects, documentation enhancements, and key achievements in Python-based systems, PyTorch implementations, and NLP solutions. Stay informed to follow the latest developments in end-to-end AI engineering.
+
+<Callout kind="info">
+  Subscribe to the RSS feed or GitHub notifications to get updates automatically.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Portfolio Additions" icon="star" href="#portfolio-additions">
+    New projects in computer vision and backend services.
+  </Card>
+  <Card title="Documentation Updates" icon="book-open" href="#doc-updates">
+    Improved guides and code examples.
+  </Card>
+  <Card title="Milestones" icon="award" href="#milestones">
+    Key achievements and releases.
+  </Card>
+</Columns>
+
+## Recent Updates
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added comprehensive guide on fine-tuning PyTorch models for NLP tasks
+- Introduced portfolio project: Real-time object detection with YOLOv8 and FastAPI backend
+
+## Improvements
+
+- Enhanced code examples with executable Jupyter notebooks
+- Optimized documentation search with better indexing
+
+## Example Code Update
+
+<CodeGroup tabs="PyTorch,TensorFlow">
+  ```python
+  import torch
+  import torch.nn as nn
+
+  class SimpleNLPModel(nn.Module):
+      def __init__(self, vocab_size, embed_dim):
+          super().__init__()
+          self.embedding = nn.Embedding(vocab_size, embed_dim)
+          self.fc = nn.Linear(embed_dim, 2)  # Binary classification
+
+      def forward(self, x):
+          x = self.embedding(x)
+          x = torch.mean(x, dim=1)
+          return self.fc(x)
+  ```
+  ```python
+  import tensorflow as tf
+
+  class SimpleNLPModel(tf.keras.Model):
+      def __init__(self, vocab_size, embed_dim):
+          super().__init__()
+          self.embedding = tf.keras.layers.Embedding(vocab_size, embed_dim)
+          self.dense = tf.keras.layers.Dense(2, activation='softmax')
+
+      def call(self, inputs):
+          x = self.embedding(inputs)
+          x = tf.reduce_mean(x, axis=1)
+          return self.dense(x)
+  ```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launched new section on deploying ML models with Docker and Kubernetes
+- Added case study: End-to-end CV pipeline for medical imaging
+
+## Bug Fixes
+
+- Fixed broken links in PyTorch tutorials
+- Resolved rendering issues in code blocks for TensorFlow examples
+
+## Documentation Updates
+
+Improved accessibility with better alt text on diagrams and keyboard navigation support.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Initial portfolio showcase with five core projects: NLP chatbots, CV detectors, and backend APIs
+- Added interactive demos using Streamlit for model inference
+
+## Breaking Changes
+
+- Restructured navigation to prioritize AI/ML content over general software dev
+
+## Key Milestones
+
+First public release of documentation site with 10+ detailed project breakdowns.
+
+</Update>
+
+## Stay Updated
+
+Follow these steps to contribute updates or track changes:
+
+<Steps>
+  <Step title="Watch Repository" icon="github">
+    Visit the GitHub repo and click "Watch" for release notifications.
+  </Step>
+  <Step title="Submit Pull Request" icon="git-pull-request">
+    Fork the repo, create a branch, and open a PR with changelog entry.
+  </Step>
+  <Step title="Review Guidelines" icon="book-open">
+    Ensure updates follow the `{CONTRIBUTING.md}` format.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Portfolio Additions" icon="star">
+    Recent projects include a PyTorch-based sentiment analysis tool processing `{>10k}` reviews per minute.
+  </Tab>
+  <Tab title="Documentation Updates" icon="edit-3">
+    Enhanced sections on TensorFlow serving and FastAPI integration.
+  </Tab>
+  <Tab title="Milestones" icon="trophy">
+    Achieved deployment of production ML systems handling `{>50k}` inferences daily.
+  </Tab>
+</Tabs>
